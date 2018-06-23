@@ -11,11 +11,12 @@ import cl.duoc.rifa.venta.entity.Comprador;
 public interface CompradorMapper {
 
 	
-	@Select("SELECT id_comprador as id, "
-	 		+ "nombre,"
+	@Select("SELECT"
+			+ "rut,"
+			+ "nombre,"
 	 		+ "apellido,"
 	 		+ "telefono,"
-	 		+ "edad"
+	 		+ "email"
 	 		+ " from comprador") //SQL
 	   List<Comprador> findAll();
 }

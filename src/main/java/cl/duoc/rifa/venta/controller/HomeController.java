@@ -19,12 +19,14 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String redirect() {
-		return "redirect:/login/";
+		return "redirect:/home/";
 	}
 	
-	@GetMapping("/login")
+	
+	
+	@GetMapping("/home")
 	public ModelAndView ShowHomeModel() {
-		ModelAndView mav = new ModelAndView(ViewConstants.LOGIN);
+		ModelAndView mav = new ModelAndView(ViewConstants.HOME);
 		return mav;
 	}
 }

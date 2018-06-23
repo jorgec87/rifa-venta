@@ -2,20 +2,21 @@ package cl.duoc.rifa.venta.entity;
 
 public class Comprador {
 
-	private int id;
+	
+	private String rut;
 	private String nombre;
 	private String apellido;
-	private int telefono;
-	private int edad;
+	private String telefono;
+	private String email;
 	
 	public Comprador() {}
 
-	public int getId() {
-		return id;
+	public String getRut() {
+		return rut;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setRut(String rut) {
+		this.rut = rut;
 	}
 
 	public String getNombre() {
@@ -34,29 +35,27 @@ public class Comprador {
 		this.apellido = apellido;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
-	public int getEdad() {
-		return edad;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEdad(int edad) {
-		this.edad = edad;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	@Override
 	public String toString() {
-		return "Comprador [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
-				+ ", edad=" + edad + "]";
+		return "Comprador [rut=" + rut + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
+				+ ", email=" + email + "]";
 	}
 
-	
-	
 	
 }

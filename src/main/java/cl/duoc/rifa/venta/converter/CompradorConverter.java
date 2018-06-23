@@ -14,11 +14,11 @@ public class CompradorConverter {
 	//Entity --> Model
 	public CompradorModel entityToModel(Comprador comprador) {
 		CompradorModel compradorModel = new CompradorModel();
-		compradorModel.setId(comprador.getId());
+		compradorModel.setRut(comprador.getRut());
 		compradorModel.setNombre(comprador.getNombre());
 		compradorModel.setApellido(comprador.getApellido());
 		compradorModel.setTelefono(comprador.getTelefono());
-		compradorModel.setEdad(comprador.getEdad());
+		compradorModel.setEmail(comprador.getEmail());
 		return compradorModel;
 	}
 	
