@@ -8,6 +8,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import cl.duoc.rifa.venta.mapper.CompradorMapper;
 
+
+/**
+ * Created by jcarrenca on 22-06-2018.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class RifaVentaApplicationTests {
