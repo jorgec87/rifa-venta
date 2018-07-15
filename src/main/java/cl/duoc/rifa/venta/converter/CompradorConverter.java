@@ -22,6 +22,18 @@ public class CompradorConverter {
 		return compradorModel;
 	}
 	
+	
+	//Model --> Entity
+	public Comprador ModelToEntity(CompradorModel compradorModel) {
+		Comprador comprador = new Comprador();
+		comprador.setRut(compradorModel.getRut());
+		comprador.setNombre(compradorModel.getNombre());
+		comprador.setApellido(compradorModel.getApellido());
+		comprador.setTelefono(compradorModel.getTelefono());
+		comprador.setEmail(compradorModel.getEmail());
+		return comprador;
+	}
+	
 	//List Entity --> List Model
 	public List<CompradorModel> ListEntityToListModel(List<Comprador> comprador) {
 		List<CompradorModel> listCompradorModel = new ArrayList<>();

@@ -5,7 +5,7 @@
 
 	<groupId>cl.duoc.rifa</groupId>
 	<artifactId>venta</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>rifa-venta</name>
@@ -60,6 +60,11 @@
 		<dependency>
 		    <groupId>com.microsoft.sqlserver</groupId>
 		    <artifactId>mssql-jdbc</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>3.4</version>
 		</dependency>
 	</dependencies>
 

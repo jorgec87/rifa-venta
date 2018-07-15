@@ -15,7 +15,7 @@ import cl.duoc.rifa.venta.util.ViewConstants;
 @RequestMapping("/")
 public class HomeController {
 	
-	
+
 	
 	
 	
@@ -29,6 +29,7 @@ public class HomeController {
 	@GetMapping("/home")
 	public ModelAndView ShowHomeModel() {
 		ModelAndView mav = new ModelAndView(ViewConstants.HOME);
+	
 		return mav;
 	}
 }

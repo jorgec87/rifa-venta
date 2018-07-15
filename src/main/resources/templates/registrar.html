@@ -23,8 +23,15 @@
 <link th:href="@{/css/plugins.css}" rel="stylesheet" type="text/css"/>
 <link th:href="@{/css/layout.css}" rel="stylesheet" type="text/css"/>
 <link th:href="@{/css/default.css}" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.22.2/sweetalert2.css" rel="stylesheet">
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
+<style>
+.page-content-wrapper .page-content {
+    min-height: 870px;
+  
+}
+</style>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -104,7 +111,7 @@
 						</a>
                                             <ul class="sub-menu">
                                                 <li>
-                                                        <a th:href="@{/comprador/add}">
+                                                        <a th:href="@{/comprador/show}">
                                                         <i class="icon-folder"></i>
                                                         Registrar</a>
                                                 </li>
@@ -156,7 +163,7 @@
 							</div>
 							<div class="portlet-body form" style="display: block;">
 								<!-- BEGIN FORM-->
-								<form action="#" id="form_sample_1" class="form-horizontal" novalidate="novalidate">
+								<form class="form-horizontal" method="POST" action="#" th:action="@{/comprador/add}" th:object="${comprador}">
 									<div class="form-body">
 										<div class="alert alert-danger display-hide">
 											<button class="close" data-close="alert"></button>
@@ -171,7 +178,7 @@
 											* </span>
 											</label>
 											<div class="col-md-4">
-												<input type="text" name="rut" data-required="1" class="form-control" aria-required="true" aria-invalid="false">
+												<input type="text" name="rut" th:field="*{rut}" data-required="1" class="form-control" aria-required="true" aria-invalid="false">
 											</div>
 										</div>
                                                                                 <div class="form-group">
@@ -179,7 +186,7 @@
 											* </span>
 											</label>
 											<div class="col-md-4">
-												<input type="text" name="name" data-required="1" class="form-control" aria-required="true" aria-invalid="false">
+												<input type="text" name="name" th:field="*{nombre}" data-required="1" class="form-control" aria-required="true" aria-invalid="false">
 											</div>
 										</div>
                                                                                 <div class="form-group">
@@ -187,7 +194,7 @@
 											* </span>
 											</label>
 											<div class="col-md-4">
-												<input type="text" name="apellido" data-required="1" class="form-control" aria-required="true" aria-invalid="false">
+												<input type="text" name="apellido" th:field="*{apellido}" data-required="1" class="form-control" aria-required="true" aria-invalid="false">
 											</div>
 										</div>
                                                                                 <div class="form-group">
@@ -195,7 +202,7 @@
 											* </span>
 											</label>
 											<div class="col-md-4">
-												<input type="text" name="apellido" data-required="1" class="form-control" aria-required="true" aria-invalid="false">
+												<input type="text" name="apellido" th:field="*{email}" data-required="1" class="form-control" aria-required="true" aria-invalid="false">
 											</div>
 										</div>
 										<div class="form-group">
@@ -203,7 +210,7 @@
 											* </span>
 											</label>
 											<div class="col-md-4">
-												<input name="number" type="text" class="form-control" aria-required="true" aria-invalid="false">
+												<input name="number" type="text" th:field="*{telefono}" class="form-control" aria-required="true" aria-invalid="false">
 											</div>
 										</div>
 									</div>
@@ -261,11 +268,46 @@
 <script th:src="@{/plugins/select2/select2.min.js}" type="text/javascript"></script>
 <script th:src="@{/plugins/components-dropdowns.js}" type="text/javascript"></script>
 <script th:src="@{/plugins/form-validation.js}" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.22.2/sweetalert2.js"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {
-   Layout.init(); // init layout
-   FormValidation.init();
+ 
+   
+   function $_GET(param){
+		url = document.URL;
+		url = String(url.match(/\?+.+/));
+		url = url.replace("?", "");
+		url = url.split("&");
+		x = 0;
+		while (x < url.length){
+		p = url[x].split("=");
+		if (p[0] == param)
+		{
+		return decodeURIComponent(p[1]);
+		}
+		x++;
+		}}
+   
+   
+   if(typeof $_GET("success") != "undefined"){
+	   swal(
+			   'Éxito!',
+			   'Agregado correctamente!',
+			   'success'
+			 )
+	}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 });
 </script>
 <!-- END JAVASCRIPTS -->

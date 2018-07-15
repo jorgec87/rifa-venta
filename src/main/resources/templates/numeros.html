@@ -106,7 +106,7 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a th:href="@{/comprador/add}">
+                                        <a th:href="@{/comprador/show}">
                                             <i class="icon-folder"></i>
                                             Registrar</a>
                                     </li>
@@ -160,12 +160,11 @@
                                                     <label style="margin-top: 8px;" class="control-label col-md-3">Rut <span class="required" aria-required="true"> * </span></label>
                                                     <div class="btn-group bootstrap-select">
                                                         <select class="selectpicker form-control" data-live-search="true" tabindex="-98">
-                                                            <option>16.368.450-0</option>
-                                                            <option>17.443.432-1</option>
-                                                            <option>7.199.906-8</option>
+                                                             <option th:each="co : ${combos}" th:value="${co.valor}" th:text="${co.nombre}">Wireframe</option>
                                                         </select>
+                                                      
                                                     </div>
-                                                    <a style="float: right;" type="button" th:href="@{/comprador/add}" class="btn green">Registrar Comprador</a>
+                                                    <a style="float: right;" type="button" th:href="@{/comprador/show}" class="btn green">Registrar Comprador</a>
                                                 </div>
                                                 <div style="margin-bottom: 0px!important; margin-top: 10px; margin-left: 15px;" class="form-group">
                                                     <button type="submit" class="btn green">Generar Compra</button>

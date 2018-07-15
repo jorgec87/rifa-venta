@@ -7,4 +7,6 @@ import cl.duoc.rifa.venta.model.CompradorModel;
 public interface CompradorService {
 
 	List<CompradorModel> getAll();
+	
+	Boolean insert(CompradorModel comprador);
 }
